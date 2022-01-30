@@ -118,3 +118,26 @@ link::before {
 .three:hover::after {
 	width: 50%;
 }
+
+/* =================== Link 4 =================== */
+.four {
+	z-index: 0;
+}
+
+.four::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 0;
+	width: 100%;
+	transition: 0.3s;
+	background-color: #fff;
+	z-index: -1;
+}
+.four:hover {
+	color: #000;
+}
+.four:hover::after {
+	height: 100%;
+}
