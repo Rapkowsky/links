@@ -13,3 +13,88 @@ body {
 	font-family: "Ubuntu", sans-serif;
 	background-color: #333;
 }
+
+.box {
+	padding: 80px 140px;
+	border-radius: 15px;
+	background-color: #222;
+	box-shadow: 0 0 15px rgba(0, 140, 255, 0.6);
+}
+
+.link {
+	position: relative;
+	padding: 10px 20px;
+	font-size: 40px;
+	color: rgba(0, 140, 255);
+	text-decoration: none;
+}
+.link,
+link::after,
+link::before {
+	transition: 0.3s;
+}
+
+/* =================== Link 1 =================== */
+
+.one::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 3px;
+	width: 100%;
+	background-color: #fff;
+	transition: transform 0.3s;
+	transform: scaleX(0);
+	/* transform origin steruje tym gdzie nasza animacja ma się zaczynać */
+	transform-origin: right;
+}
+
+.one:hover::after {
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+/* =================== Link 2 =================== */
+
+.two::before,
+.two::after {
+	content: "";
+	position: absolute;
+	height: 0;
+	width: 0;
+	transition: 0.3s;
+}
+
+.two::before {
+	top: -2px;
+	left: -8px;
+	border-top: 0px solid #fff;
+	border-left: 0px solid #fff;
+}
+.two::after {
+	bottom: -2px;
+	right: -8px;
+	border-bottom: 0px solid #fff;
+	border-right: 0px solid #fff;
+}
+
+.two:hover::before,
+.two:hover::after {
+	height: 50px;
+	width: 50px;
+}
+
+.two:hover::before {
+	border-top: 3px solid #fff;
+	border-left: 3px solid #fff;
+}
+.two:hover::after {
+	bottom: -2px;
+	right: -8px;
+	border-bottom: 3px solid #fff;
+	border-right: 3px solid #fff;
+}
+
+/* =================== Link 3 =================== */
+
